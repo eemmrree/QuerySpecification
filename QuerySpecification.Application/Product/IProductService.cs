@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuerySpecification.Application.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace QuerySpecification.Application
 {
     public interface IProductService
     {
-        public void GetAll();
+        List<ProductDto> GetAll();
     }
 }

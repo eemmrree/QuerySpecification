@@ -1,6 +1,8 @@
-﻿using QuerySpecification.Data.Repositories;
+﻿using QuerySpecification.Application.Dto;
+using QuerySpecification.Data.Repositories;
 using QuerySpecification.Domain.Entities;
 using QuerySpecification.Domain.QuerySpecification;
+using System.Collections.Generic;
 
 namespace QuerySpecification.Application
 {
@@ -13,11 +15,12 @@ namespace QuerySpecification.Application
             _crudRepo = crudRepo;
         }
 
-        public void GetAll()
+        public List<ProductDto> GetAll()
         {
             var specification = new AllProductSpec();
             var specUnitsInStock = new InStockProductSpec();
-            _crudRepo.FindAll(specification.And(specUnitsInStock));
+           var products= _crudRepo.FindAll(specification.And(specUnitsInStock));
+            return (List<ProductDto>)products;
         }
     }
 }
