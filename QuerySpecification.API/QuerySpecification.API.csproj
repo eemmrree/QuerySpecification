@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\QuerySpecification.Application\QuerySpecification.Application.csproj" />
   </ItemGroup>
 
 </Project>
